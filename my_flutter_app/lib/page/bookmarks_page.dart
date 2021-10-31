@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:my_flutter_app/model/bookmark.dart';
 import 'package:my_flutter_app/util/navigation_util.dart';
-import 'package:my_flutter_app/widgent/bookmarks_list_widgent.dart';
+import 'package:my_flutter_app/widgent/bookmarks_grid_widgent.dart';
 
 class BookmarksPage extends StatefulWidget {
   @override
@@ -17,7 +17,7 @@ class _BookmarksPageState extends State<BookmarksPage> {
       appBar: AppBar(
         title: const Text("私のブックマークです"),
       ),
-      body: BookmarksListWidget(bookmarksList),
+      body: BookmarksGridWidget(bookmarksList),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       floatingActionButton: FloatingActionButton.extended(
         icon: Icon(Icons.add),

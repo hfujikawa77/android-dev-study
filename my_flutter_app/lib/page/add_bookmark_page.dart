@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:my_flutter_app/widgent/bookmarks_list_widgent.dart';
+import 'package:my_flutter_app/widgent/bookmarks_grid_widgent.dart';
 import 'package:my_flutter_app/model/bookmark.dart';
 
 class AddBookmarkPage extends StatefulWidget {

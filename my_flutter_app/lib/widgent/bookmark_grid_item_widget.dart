@@ -6,19 +6,20 @@ import 'package:my_flutter_app/util/navigation_util.dart';
 
 import '../model/bookmark.dart';
 
-class BookmarkListItemWidget extends StatelessWidget {
+class BookmarkGridItemWidget extends StatelessWidget {
   final Bookmark bookmark;
 
-  BookmarkListItemWidget(this.bookmark);
+  BookmarkGridItemWidget(this.bookmark);
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(12),
+    return Card(
+      elevation: 4,
       child: InkWell(
         onTap: () => navigateToViewBookmarkPage(bookmark, context),
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
             Text(bookmark.title, style: Theme.of(context).textTheme.subtitle1),
             SizedBox(height: 6),

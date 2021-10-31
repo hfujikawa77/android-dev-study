@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:my_flutter_app/model/bookmark.dart';
 import 'package:my_flutter_app/page/add_bookmark_page.dart';
 import 'package:my_flutter_app/page/view_bookmark_page.dart';
-import 'package:my_flutter_app/widgent/bookmarks_list_widgent.dart';
+import 'package:my_flutter_app/widgent/bookmarks_grid_widgent.dart';
 
 void navigateToViewBookmarkPage(Bookmark bookmark, BuildContext context) {
   Navigator.of(context).push(
