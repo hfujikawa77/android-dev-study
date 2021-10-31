@@ -10,6 +10,6 @@ class Bookmark {
 // }
 }
 
-class DummyWidget {
-  Bookmark b = new Bookmark("123", "12.4");
-}
+// class DummyWidget {
+//   Bookmark b = new Bookmark("123", "12.4");
+// }

@@ -1,16 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:my_flutter_app/model/bookmark.dart';
+import 'package:my_flutter_app/util/navigation_util.dart';
+import 'package:my_flutter_app/widgent/bookmarks_list_widgent.dart';
 
-import '../main.dart';
+class BookmarksPage extends StatefulWidget {
+  @override
+  _BookmarksPageState createState() => _BookmarksPageState();
+}
 
-class BookmarksPage extends StatelessWidget {
-  List<Bookmark> bookmarksList = [
-    Bookmark("Flutter", "https://flutter.dev"),
-    Bookmark("Google", "https://google.com"),
-    Bookmark("Google", "https://google.com"),
-    Bookmark("Google", "https://google.com"),
-    Bookmark("Google", "https://google.com")
-  ];
+class _BookmarksPageState extends State<BookmarksPage> {
+  List<Bookmark> bookmarksList = [];
 
   @override
   Widget build(BuildContext context) {
@@ -19,6 +18,22 @@ class BookmarksPage extends StatelessWidget {
         title: const Text("私のブックマークです"),
       ),
       body: BookmarksListWidget(bookmarksList),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
+      floatingActionButton: FloatingActionButton.extended(
+        icon: Icon(Icons.add),
+        onPressed: () => onAddButtonPressed(context),
+        label: Text("Add"),
+      ),
     );
+  }
+
+  void onAddButtonPressed(BuildContext context) async {
+    final result = await navigateToAddBookmarkPage(context);
+
+    if (result != null && result is Bookmark) {
+      setState(() {
+        bookmarksList.add(result);
+      });
+    }
   }
 }
