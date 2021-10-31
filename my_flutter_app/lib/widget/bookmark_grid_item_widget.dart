@@ -1,7 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:my_flutter_app/page/add_bookmark_page.dart';
-import 'package:my_flutter_app/page/view_bookmark_page.dart';
 import 'package:my_flutter_app/util/navigation_util.dart';
 
 import '../model/bookmark.dart';

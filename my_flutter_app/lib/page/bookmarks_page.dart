@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:my_flutter_app/model/bookmark.dart';
 import 'package:my_flutter_app/util/navigation_util.dart';
-import 'package:my_flutter_app/widgent/bookmarks_grid_widgent.dart';
+import 'package:my_flutter_app/widget/bookmarks_grid_widget.dart';
+import 'package:my_flutter_app/widget/bookmarks_list_widget.dart';
 
 class BookmarksPage extends StatefulWidget {
   @override
@@ -9,6 +10,7 @@ class BookmarksPage extends StatefulWidget {
 }
 
 class _BookmarksPageState extends State<BookmarksPage> {
+  bool isGridMode = false;
   List<Bookmark> bookmarksList = [];
 
   @override
@@ -16,8 +18,22 @@ class _BookmarksPageState extends State<BookmarksPage> {
     return Scaffold(
       appBar: AppBar(
         title: const Text("私のブックマークです"),
+        actions: <Widget>[
+          IconButton(
+            icon: isGridMode
+                ? Icon(Icons.list, color: Colors.white)
+                : Icon(Icons.grid_on, color: Colors.white),
+            onPressed: () {
+              setState(() {
+                isGridMode = !isGridMode;
+              });
+            },
+          )
+        ],
       ),
-      body: BookmarksGridWidget(bookmarksList),
+      body: isGridMode
+          ? BookmarksGridWidget(bookmarksList)
+          : BookmarksListWidget(bookmarksList),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       floatingActionButton: FloatingActionButton.extended(
         icon: Icon(Icons.add),
