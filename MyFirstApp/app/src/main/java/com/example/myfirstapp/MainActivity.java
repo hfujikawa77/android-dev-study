@@ -2,10 +2,19 @@ package com.example.myfirstapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.TextView;
+
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
 
 import java.io.IOException;
 import java.net.DatagramPacket;
@@ -23,8 +32,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void sendMessage(View view){
-        System.out.println("Pushed!");
-        sendUdp(view);
+//        System.out.println("Pushed!");
+//        sendUdp(view);
 
         Intent intent = new Intent(this, DisplayMessageActivity.class);
         EditText editText = (EditText) findViewById(R.id.editTextTextPersonName);
@@ -32,6 +41,8 @@ public class MainActivity extends AppCompatActivity {
         intent.putExtra(EXTRA_MESSAGE, message);
         startActivity(intent);
     }
+
+
 
     public void sendUdp(View view){
         new Thread(new Runnable(){

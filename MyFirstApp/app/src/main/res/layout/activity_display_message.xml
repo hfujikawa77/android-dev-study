@@ -6,6 +6,20 @@
     android:layout_height="match_parent"
     tools:context=".DisplayMessageActivity">
 
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="130dp"
+        android:layout_height="43dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:onClick="doSendMessage"
+        android:text="Button"
+        app:layout_constraintBaseline_toBaselineOf="@+id/editTextTextPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/editTextTextPersonName"
+        tools:text="@string/button_send" />
+
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
